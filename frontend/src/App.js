@@ -2,6 +2,7 @@ import './App.css';
 import MeetingList from './MeetingList';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import AddMeeting from './AddMeeting';
+import Participant from './Participant';
 
 
 
@@ -13,6 +14,7 @@ function App() {
             <Route path="/" element = {<MeetingList/>} />
             <Route path="/AddMeeting" element = {<AddMeeting/>} />
             <Route path="/AddMeeting/:id" element = {<AddMeeting/>} />
+            <Route path="/Participant/:id" element = {<Participant/>} />
           </Routes>
         
         </BrowserRouter>
