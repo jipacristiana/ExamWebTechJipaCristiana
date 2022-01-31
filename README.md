@@ -2,12 +2,12 @@
 
 The subject:
 
-Description
+# Description
 Implementing a REST service and a React interface for the following entities: - Meeting - Participant
 
 Meeting has many Participant. Meeting has an id (integer, primary key), a description (string of at least 3 characters), an url (string, validated as url), a date/time (date, representing the moment the meeting takes place). Participant has an id (integer, primary key), a name (string of at least 5 characters).
 
-Graded components and detailed points
+# Graded components and detailed points
 REST service
 Defining the first entity - 0.3
 Defining the second entity - 0.3
