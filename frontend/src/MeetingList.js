@@ -2,9 +2,11 @@ import {useState, useEffect} from 'react';
 import {get, remove} from './Calls.js';
 import {Button, Paper, Table, TableBody, TableCell, TableRow, TableContainer, TableHead, IconButton} from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
+import SendSharpIcon from '@material-ui/icons/SendSharp';
+import ImportExportIcon from '@material-ui/icons/ImportExport';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
-import MenuIcon from '@material-ui/icons/Menu';
+import PersonIcon from '@material-ui/icons/Person';
 import {meetRoute} from './ApiRoutes.js';
 import { useNavigate } from 'react-router-dom';
 
@@ -31,16 +33,8 @@ export default function MeetingList(){
     return(
         <div>
 
-            <div>
-                <Button
-                    variant='contained'
-                    color="primary"
-                    startIcon={<AddIcon />}
-                    onClick={() => {navigate("AddMeeting")}}
-                >
-                    Add new Meeting
-                </Button>
-            </div>
+            <h1>Welcome to Meetings Sessions</h1> <br></br>
+            <h2>See  your following meetings, add one, edit and delete.</h2>
 
             <br/>
 
@@ -67,7 +61,7 @@ export default function MeetingList(){
                                 <TableCell align='right'>{row.MeetingDate}</TableCell>
                                 <TableCell align='right'>
                                     <IconButton onClick={() => navigate(`/Participant/${row.MeetingId}`)}>
-                                        <MenuIcon />
+                                        <PersonIcon />
                                     </IconButton>
                                 </TableCell>
                                 <TableCell align="right">
@@ -83,7 +77,39 @@ export default function MeetingList(){
                     </TableBody>
                 </Table>
             </TableContainer>
+            <br></br>
+                     <div>
+                          <Button
+                           variant='contained'
+                            color="dark"
+                         startIcon={<AddIcon />}
+                         onClick={() => {navigate("AddMeeting")}}
+                             >
+                              Add a new Meeting
+                      </Button>
+                     </div>
 
+                     <br></br>
+                     <div>
+                          <Button
+                           id = 'export'
+                         startIcon={<SendSharpIcon />}
+                         
+                             >
+                              Import data
+                      </Button>
+                     </div>
+
+                     <br></br>
+                     <div>
+                          <Button
+                           id= 'import'
+                         startIcon={<ImportExportIcon />}
+                         
+                             >
+                              Export data
+                      </Button>
+                     </div>
         </div>
     )
 }
