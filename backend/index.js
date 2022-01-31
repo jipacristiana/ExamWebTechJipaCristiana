@@ -146,10 +146,10 @@ async function filterMeeting(filter) {
     if(filter.meetingURL)
         whereClause.MeetingURL = {[LikeOp] : `%${filter.meetingURL}%`};
 
-    if(filter.meetingDate)
-        whereClause.MeetingDate = {[LikeOp] : `%${filter.meetingDate}%`};
+    if(filter.meetingDescription)
+        whereClause.MeetingDescription = {[LikeOp] : `%${filter.meetingDescription}%`};
 
-    return await Employee.findAll({
+    return await Meeting.findAll({
         where: whereClause
     });
 
@@ -241,7 +241,7 @@ router.route('/meetingFilter').get(async (req, res) =>{
 })
 
 router.route('/meetingSort').get(async (req, res) =>{
-    return res.json(await getMeetingbyDescription(req.query.description));
+    return res.json(await getMeetingbyDescription(req.query.des));
 })
 
 
